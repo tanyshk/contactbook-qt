@@ -1,0 +1,37 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/button_default.png</file>
+        <file>images/button_pressed.png</file>
+        <file>images/navigation_next_item.png</file>
+        <file>images/navigation_previous_item.png</file>
+        <file>images/tab_selected.png</file>
+        <file>images/tabs_standard.png</file>
+        <file>images/textinput.png</file>
+        <file>images/toolbar.png</file>
+        <file>images/arrow.png</file>
+        <file>images/listitem.png</file>
+        <file>images/listitem_pressed.png</file>
+        <file>qml/qcontactbook/AndroidDelegate.qml</file>
+        <file>qml/qcontactbook/DepartmentPage.qml</file>
+        <file>qml/qcontactbook/FilialPage.qml</file>
+        <file>qml/qcontactbook/ListDelegate.qml</file>
+        <file>qml/qcontactbook/main.qml</file>
+        <file>qml/qcontactbook/PersonPage.qml</file>
+        <file>qml/qcontactbook/StaffPage.qml</file>
+        <file>qml/qcontactbook/text/TextAbout.qml</file>
+        <file>qml/qcontactbook/text/TextCommon.qml</file>
+        <file>qml/qcontactbook/text/TextData.qml</file>
+        <file>qml/qcontactbook/text/TextKey.qml</file>
+        <file>qml/qcontactbook/text/TextList.qml</file>
+        <file>qml/qcontactbook/TextItem.qml</file>
+        <file>qml/qcontactbook/CallItem.qml</file>
+        <file>qml/qcontactbook/AboutPage.qml</file>
+        <file>qml/qcontactbook/SearchResultPage.qml</file>
+        <file>qml/qcontactbook/SearchItem.qml</file>
+        <file>qml/qcontactbook/SearchPage.qml</file>
+        <file>images/phone.png</file>
+        <file>images/clear.png</file>
+        <file>qml/qcontactbook/text/TextButton.qml</file>
+        <file>images/clear1.png</file>
+    </qresource>
+</RCC>
