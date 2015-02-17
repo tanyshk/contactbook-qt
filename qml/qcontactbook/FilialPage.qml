@@ -19,6 +19,14 @@ Item {
 
     property string header: "ContactBook"
 
+    Connections {
+        target: controller
+        onDbChanged: {
+            console.log("db changed");
+            list.model = controller.getModel(0);
+        }
+    }
+
     id: filialPage
     ListView {
         id: list

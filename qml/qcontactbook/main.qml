@@ -1,5 +1,6 @@
 import QtQuick 2.1
 import QtQuick.Controls 1.0
+import QtQuick.Dialogs 1.0
 
 ApplicationWindow {
     id: rootWindow
@@ -136,6 +137,14 @@ ApplicationWindow {
 //            visible: !(stackView.currentItem == aboutPage)
 //        }
         MenuItem {
+            id: dbItem
+            text: "База контактов"
+            onTriggered: {
+                fileDialog.open();
+            }
+        }
+
+        MenuItem {
             id: exitItem
             text: "Выход"
             onTriggered:  {
@@ -144,5 +153,20 @@ ApplicationWindow {
         }
 
     }
+    }
+    FileDialog {
+        id: fileDialog
+        title: "Выберите файл базы"
+        visible: false
+        selectMultiple: false
+        nameFilters: "Db files (*.db)"
+        onAccepted: {
+            console.log(fileDialog.fileUrl);
+            controller.loadDb(fileDialog.fileUrl);
+            close();
+        }
+        onRejected: {
+            close();
+        }
     }
 }

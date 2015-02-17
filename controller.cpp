@@ -38,6 +38,16 @@ QString Controller::getError()
     return m_errorStr;
 }
 
+void Controller::loadDb(const QString &path)
+{
+    qDebug() << Q_FUNC_INFO << path;
+    delete m_db;
+    m_db = new SqliteAdapter();
+    QUrl url(path);
+    m_db->connect(url.toLocalFile());
+    emit dbChanged();
+}
+
 Controller::~Controller()
 {
     delete m_db;

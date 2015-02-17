@@ -46,11 +46,13 @@ public:
 
     QByteArray getPhoto(const int id);
     Q_INVOKABLE QString getError();
+    Q_INVOKABLE void loadDb(const QString& path);
 
     //Person* person() { return m_person; }
 
 signals:
     //void personChanged();
+    void dbChanged();
 
 private:
     int getNameId();
