@@ -63,11 +63,11 @@ ApplicationWindow {
     }
 
     toolBar: BorderImage {
-        border.bottom: 8
-        source: "qrc:/images/toolbar.png"
-        width: parent.width
-        //height: 60
-        height: rootWindow.height * 0.07
+//        border.bottom: 8
+//        source: "qrc:/images/toolbar.png"
+//        width: parent.width/2
+        height: 140
+//        height: rootWindow.height * 0.07
 
         Rectangle {
             id: backButton
@@ -78,7 +78,7 @@ ApplicationWindow {
             anchors.verticalCenter: parent.verticalCenter
             antialiasing: true
             //height: 50
-            height: parent.height * 0.9
+            height: parent.height
             radius: 4
             color: backmouse.pressed ? "#222" : "transparent"
             Behavior on opacity { NumberAnimation{} }
@@ -107,53 +107,51 @@ ApplicationWindow {
         }
     }
 
+    menuBar: MenuBar {
+        Menu {
+            id: menu
+            MenuItem {
+                id: searchMenuItem
+                text: "Поиск"
+                onTriggered: stackView.push(searchPage);
+                visible: !(stackView.currentItem == searchPage ||
+                           stackView.currentItem == searchResultPage ||
+                           stackView.currentItem == aboutPage)
+            }
+    //        MenuItem {
+    //            id: aboutMenuItem
+    //            text: "О программе"
+    //            onTriggered:  {
+    //                console.log(stackView.currentItem.id);
+    //                stackView.push(aboutPage);
+    //            }
+    //            visible: !(stackView.currentItem == aboutPage)
+    //        }
+            MenuItem {
+                id: dbItem
+                text: "База контактов"
+                onTriggered: {
+                    fileDialog.open();
+                }
+            }
+
+            MenuItem {
+                id: exitItem
+                text: "Выход"
+                onTriggered:  {
+                    Qt.quit();
+                }
+            }
+
+        }
+    }
+
     StackView {
         id: stackView
         anchors.fill: parent
-
         initialItem: filialPage
-
-
     }
-    menuBar: MenuBar {
-    Menu {
-        id: menu
 
-        MenuItem {
-            id: searchMenuItem
-            text: "Поиск"
-            onTriggered: stackView.push(searchPage);
-            visible: !(stackView.currentItem == searchPage ||
-                       stackView.currentItem == searchResultPage ||
-                       stackView.currentItem == aboutPage)
-        }
-//        MenuItem {
-//            id: aboutMenuItem
-//            text: "О программе"
-//            onTriggered:  {
-//                console.log(stackView.currentItem.id);
-//                stackView.push(aboutPage);
-//            }
-//            visible: !(stackView.currentItem == aboutPage)
-//        }
-        MenuItem {
-            id: dbItem
-            text: "База контактов"
-            onTriggered: {
-                fileDialog.open();
-            }
-        }
-
-        MenuItem {
-            id: exitItem
-            text: "Выход"
-            onTriggered:  {
-                Qt.quit();
-            }
-        }
-
-    }
-    }
     FileDialog {
         id: fileDialog
         title: "Выберите файл базы"
