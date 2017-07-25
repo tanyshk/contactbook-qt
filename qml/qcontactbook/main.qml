@@ -66,7 +66,7 @@ ApplicationWindow {
 //        border.bottom: 8
 //        source: "qrc:/images/toolbar.png"
 //        width: parent.width/2
-        height: 140
+        height: 130
 //        height: rootWindow.height * 0.07
 
         Rectangle {

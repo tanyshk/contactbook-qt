@@ -1,5 +1,6 @@
 import QtQuick 2.1
 import QtQuick.Controls 1.0
+import QtQuick.Controls.Styles 1.0
 import "text/"
 
 Item {
@@ -40,6 +41,12 @@ Item {
         maximumLength: 80
         inputMethodHints: isPhoneNumber ? (Qt.ImhDialableCharactersOnly | Qt.ImhNoPredictiveText) : 0
         placeholderText: item.label
+        style: TextFieldStyle {
+            background: Rectangle {
+                color: white
+                radius: 3
+            }
+        }
 
         onAccepted: item.accepted()
 
